@@ -31,7 +31,7 @@ dependencies {
     // 推送与实时聊天需要的包
     compile ('cn.leancloud.android:avoscloud-push:v4.6.2')
     compile ('cn.leancloud.android:avoscloud-mixpush:v4.6.2@aar'){transitive = true}
-    compile ('com.meizu.flyme.internet:push-internal-publish:3.3.170123@aar')
+    compile ('com.meizu.flyme.internet:push-internal:3.6.0@aar')
 
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
