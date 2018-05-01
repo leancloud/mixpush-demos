@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="cn.leancloud.demo.leancloudmixpush">
+
+    <!-- HMS-SDK引导升级HMS功能，访问OTA服务器需要网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- HMS-SDK引导升级HMS功能，保存下载的升级包需要SD卡写权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- 检测网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- 检测wifi状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- 为了获取用户手机的IMEI，用来唯一的标识用户。 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <!-- 如果是安卓8.0，应用编译配置的targetSdkVersion>=26，请务必添加以下权限 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- 华为推送要求的设置（appId） -->
+        <meta-data
+            android:name="com.huawei.hms.client.appid"
+            android:value="100259225">
+        </meta-data>
+
+        <!-- 华为推送要求的 updateProvider -->
+        <provider
+            android:name="com.huawei.hms.update.provider.UpdateProvider"
+            android:authorities="cn.leancloud.demo.leancloudmixpush.hms.update.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+        </provider>
+
+        <!-- 华为推送要求的 activity -->
+        <activity
+            android:name="com.huawei.hms.activity.BridgeActivity"
+            android:configChanges="orientation|locale|screenSize|layoutDirection|fontScale"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.Translucent">
+            <meta-data
+                android:name="hwc-theme"
+                android:value="androidhwext:style/Theme.Emui.Translucent"/>
+        </activity>
+
+        <!-- 接收通道发来的通知栏消息 -->
+        <receiver android:name="com.huawei.hms.support.api.push.PushEventReceiver">
+            <intent-filter>
+                <action android:name="com.huawei.intent.action.PUSH"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- 自定义 receiver -->
+        <receiver android:name="com.avos.avoscloud.AVHMSPushMessageReceiver">
+            <intent-filter>
+
+                <!-- 必须,用于接收TOKEN -->
+                <action android:name="com.huawei.android.push.intent.REGISTRATION"/>
+                <!-- 必须，用于接收消息 -->
+                <action android:name="com.huawei.android.push.intent.RECEIVE"/>
+                <!-- 可选，用于点击通知栏或通知栏上的按钮后触发onEvent回调 -->
+                <action android:name="com.huawei.android.push.intent.CLICK"/>
+                <!-- 可选，查看PUSH通道是否连接，不查看则不需要 -->
+                <action android:name="com.huawei.intent.action.PUSH_STATE"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login">
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings">
+        </activity>
+        <activity android:name=".PushTargetActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="lcpushscheme" android:host="cn.leancloud.push" android:path="/notify_detail"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
