@@ -16,6 +16,7 @@ public class MyApp extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
+    AVOSCloud.setDebugLogEnabled(true);
 
     AVOSCloud.initialize(this, LC_APP_ID, LC_APP_KEY);
     AVMixPushManager.registerHMSPush(this);
