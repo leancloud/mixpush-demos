@@ -56,6 +56,9 @@
                 android:name="hwc-theme"
                 android:value="androidhwext:style/Theme.Emui.Translucent"/>
         </activity>
+        <service android:name="com.avos.avoscloud.PushService"/>
+        <service android:name="com.huawei.updatesdk.service.deamon.download.DownloadService"
+                 android:exported="false"/>
 
         <!-- 接收通道发来的通知栏消息 -->
         <receiver android:name="com.huawei.hms.support.api.push.PushEventReceiver">

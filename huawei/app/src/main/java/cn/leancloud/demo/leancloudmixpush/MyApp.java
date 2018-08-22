@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.avos.avoscloud.AVOSCloud;
 import com.avos.avoscloud.AVMixPushManager;
+import com.avos.avoscloud.PushService;
 
 /**
  * Created by fengjunwen on 2018/1/30.
@@ -20,6 +21,7 @@ public class MyApp extends Application {
 
     AVOSCloud.initialize(this, LC_APP_ID, LC_APP_KEY);
     AVMixPushManager.registerHMSPush(this);
+    PushService.setDefaultPushCallback(this, MainActivity.class);
   }
 
 }

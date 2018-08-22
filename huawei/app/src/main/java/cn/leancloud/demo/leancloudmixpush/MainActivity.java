@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     AVMixPushManager.connectHMS(this);
+    AVMixPushManager.setHMSReceiveNotifyMsg(true);
     Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("lcpushscheme://cn.leancloud.push/notify_detail?content=thisistest"));
     String intentUri = i.toUri(Intent.URI_INTENT_SCHEME);
     System.out.println("intentUri: " + intentUri);
