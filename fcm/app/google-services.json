@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "461313503627",
+    "firebase_url": "https://fcmpush-f8e3d.firebaseio.com",
+    "project_id": "fcmpush-f8e3d",
+    "storage_bucket": "fcmpush-f8e3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461313503627:android:958514073208bb4b",
+        "android_client_info": {
+          "package_name": "cn.leancloud.fcmdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "461313503627-mdcr46tphpiig7omjgf0ikpoeepa695u.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "461313503627-mdcr46tphpiig7omjgf0ikpoeepa695u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUJLjRMklt7ABEWZD9VIKHJPQB2hfAEoo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FCMdemo</string>
+    <string name="welcome">Welcome to LeanCloud FCMdemo</string>
+    <string name="display_token">Display Token</string>
+    <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>
+    <string name="default_notification_channel_id">abc</string>
+</resources>
