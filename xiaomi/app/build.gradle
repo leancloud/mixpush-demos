@@ -26,10 +26,12 @@ dependencies {
     implementation 'com.android.support:design:26.1.0'
 
     // LeanCloud 基础包
-    compile ('cn.leancloud.android:avoscloud-sdk:v4.7.1')
+    implementation ('cn.leancloud.android:avoscloud-sdk:4.7.10')
     // 推送与实时聊天需要的包
-    compile ('cn.leancloud.android:avoscloud-push:v4.7.1')
-    compile ('cn.leancloud.android:avoscloud-mixpush:v4.7.1@aar'){transitive = true}
+    implementation ('cn.leancloud.android:avoscloud-push:4.7.10')
+    implementation ('cn.leancloud.android:avoscloud-mixpush:4.7.10') {
+        exclude group: 'cn.leancloud.android', module: 'hmsagent'
+    }
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'

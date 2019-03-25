@@ -9,8 +9,9 @@ public class PushTargetActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_push_target);
-    String content = savedInstanceState.getString("content");
-    System.out.println("received content: " + content);
+
+    String content = this.getIntent().getStringExtra("content");
+    System.out.println("received content from Intent Extra: " + content);
   }
 
   @Override

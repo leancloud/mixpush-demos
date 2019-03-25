@@ -9,9 +9,11 @@ import com.avos.avoscloud.*;
  */
 
 public class MyApp extends Application {
+  // 请替换成您自己的 appId 和 appKey
   private static final String LC_APP_ID = "";
   private static final String LC_APP_KEY = "";
 
+  // 请替换成您自己的小米 appId 和 appKey
   private static final String XIAOMI_APP = "";
   private static final String XIAOMI_KEY = "";
 
@@ -20,6 +22,6 @@ public class MyApp extends Application {
     super.onCreate();
     AVOSCloud.setDebugLogEnabled(true);
     AVOSCloud.initialize(this,LC_APP_ID,LC_APP_KEY);
-    AVMixpushManager.registerXiaomiPush(this, XIAOMI_APP, XIAOMI_KEY);
+    AVMixPushManager.registerXiaomiPush(this, XIAOMI_APP, XIAOMI_KEY);
   }
 }
