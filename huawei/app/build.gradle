@@ -11,6 +11,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         resConfigs "en", "zh-rCN"
         vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -21,15 +22,16 @@ android {
 }
 
 dependencies {
-//    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 
-    compile ('cn.leancloud.android:avoscloud-sdk:v4.7.10')
-    compile ('cn.leancloud.android:avoscloud-push:v4.7.10@aar'){transitive = true}
-    compile ('cn.leancloud.android:avoscloud-mixpush:v4.7.10@aar'){
+    implementation ('cn.leancloud.android:avoscloud-sdk:4.7.11')
+    implementation ('cn.leancloud.android:avoscloud-push:4.7.11@aar'){transitive = true}
+    implementation ('cn.leancloud.android:avoscloud-mixpush:4.7.11@aar'){
         exclude group:'cn.leancloud.android', module:'hmsagent'
+        exclude group:'com.huawei.android.hms', module:'push'
     }
 
     implementation 'com.android.support:design:26.1.0'

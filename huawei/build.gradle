@@ -5,10 +5,10 @@ buildscript {
     repositories {
         google()
         jcenter()
-        //这里是 LeanCloud 的包仓库
-        maven {
-            url "http://mvn.leancloud.cn/nexus/content/repositories/public"
-        }
+//        //这里是 LeanCloud 的包仓库
+//        maven {
+//            url "http://mvn.leancloud.cn/nexus/content/repositories/public"
+//        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.0'
@@ -31,13 +31,13 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven {
-            url 'http://developer.huawei.com/repo/'
-        }
-        //这里是 LeanCloud 的包仓库
-        maven {
-            url "http://mvn.leancloud.cn/nexus/content/repositories/public"
-        }
+//        maven {
+//            url 'http://developer.huawei.com/repo/'
+//        }
+//        //这里是 LeanCloud 的包仓库
+//        maven {
+//            url "http://mvn.leancloud.cn/nexus/content/repositories/public"
+//        }
     }
 }
 

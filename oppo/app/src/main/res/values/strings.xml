@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">OppoPushDemo</string>
+    <string name="title_home">基础信息</string>
+    <string name="title_dashboard">用户绑定</string>
+    <string name="title_notifications">推送设置</string>
+    <string name="about">关于</string>
+
+    <string name="get_device_id">设备ID</string>
+    <string name="get_push_status">服务状态</string>
+    <string name="set_alias">设置别名</string>
+    <string name="unset_alias">注销别名</string>
+    <string name="get_all_alias">别名列表</string>
+    <string name="set_account">设置账号</string>
+    <string name="unset_account">注销账号</string>
+    <string name="get_all_account">账号列表</string>
+    <string name="subscribe_tag">订阅标签</string>
+    <string name="unsubscribe_tag">注销标签</string>
+    <string name="get_all_tag">标签列表</string>
+
+    <string name="register">注册</string>
+    <string name="unregister">注销</string>
+    <string name="pause_push">暂停推送</string>
+    <string name="resume_push">恢复推送</string>
+    <string name="set_push_time">推送时间</string>
+    <string name="clear_notify">清除通知</string>
+    <string name="clear_all_notify">清空通知</string>
+
+    <string name="start_time">开始时间</string>
+    <string name="end_time">结束时间</string>
+    <string name="ok">确认</string>
+    <string name="cancel">取消</string>
+    <string name="set_accept_time">设置时间</string>
+
+    <string name="week_day_1">周一</string>
+    <string name="week_day_2">周二 </string>
+    <string name="week_day_3">周三</string>
+    <string name="week_day_4">周四</string>
+    <string name="week_day_5">周五</string>
+    <string name="week_day_6">周六</string>
+    <string name="week_day_7">周日</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
