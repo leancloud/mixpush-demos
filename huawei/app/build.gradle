@@ -27,9 +27,9 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 
-    implementation ('cn.leancloud.android:avoscloud-sdk:4.7.11')
-    implementation ('cn.leancloud.android:avoscloud-push:4.7.11@aar'){transitive = true}
-    implementation ('cn.leancloud.android:avoscloud-mixpush:4.7.11@aar'){
+    implementation ('cn.leancloud.android:avoscloud-sdk:4.7.14')
+    implementation ('cn.leancloud.android:avoscloud-push:4.7.14@aar'){transitive = true}
+    implementation ('cn.leancloud.android:avoscloud-mixpush:4.7.14@aar'){
         exclude group:'cn.leancloud.android', module:'hmsagent'
         exclude group:'com.huawei.android.hms', module:'push'
     }
