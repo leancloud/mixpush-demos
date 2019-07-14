@@ -10,11 +10,19 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <!-- 检测wifi状态 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <!-- 为了获取用户手机的IMEI，用来唯一的标识用户。 -->
+    <!-- HMS-SDK 为了获取用户手机的IMEI，用来唯一的标识用户。 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <!-- 如果是安卓8.0，应用编译配置的targetSdkVersion>=26，请务必添加以下权限 -->
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+
+    <!-- HMS-SDK 接收PUSH TOKEN的广播以及PUSH消息需要定义该权限 ${PACKAGE_NAME} 要替换上您应用的包名 -->
+    <permission
+        android:name="cn.leancloud.demo.leancloudmixpush.permission.PROCESS_PUSH_MSG"
+        android:protectionLevel="signatureOrSystem"/>
+
+    <!-- HMS-SDK 接收PUSH TOKEN的广播以及PUSH消息需要定义该权限 ${PACKAGE_NAME} 要替换上您应用的包名 -->
+    <uses-permission android:name="cn.leancloud.demo.leancloudmixpush.permission.PROCESS_PUSH_MSG" />
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
@@ -35,8 +43,14 @@
             android:name="com.huawei.hms.client.appid"
             android:value="100259225">
         </meta-data>
+        <!-- 配置华为移动服务版本 -->
+        <meta-data
+            android:name="com.huawei.hms.version"
+            android:value="2.6.3">
+        </meta-data>
 
-        <!-- 华为推送要求的 updateProvider -->
+        <!-- 华为推送要求的 updateProvider，用于HMS SDK引导升级HMS APK，提供给系统安装器读取升级文件 -->
+        <!-- <包名> 用实际的应用包名替换 -->
         <provider
             android:name="com.huawei.hms.update.provider.UpdateProvider"
             android:authorities="cn.leancloud.demo.leancloudmixpush.hms.update.provider"
@@ -45,6 +59,7 @@
         </provider>
 
         <!-- 华为推送要求的 activity -->
+        <!-- BridgeActivity定义了HMS SDK中一些跳转所需要的透明页面 -->
         <activity
             android:name="com.huawei.hms.activity.BridgeActivity"
             android:configChanges="orientation|locale|screenSize|layoutDirection|fontScale"
@@ -56,36 +71,61 @@
                 android:name="hwc-theme"
                 android:value="androidhwext:style/Theme.Emui.Translucent"/>
         </activity>
-        <service android:name="com.avos.avoscloud.PushService"/>
+
+        <!-- AppUpdateActivity和PackageInstallActivity是 HMS SDK自升级接口所需要使用的页面 -->
+        <activity
+            android:name="com.huawei.updatesdk.service.otaupdate.AppUpdateActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="false"
+            android:theme="@style/upsdkDlDialog" >
+
+            <meta-data
+                android:name="hwc-theme"
+                android:value="androidhwext:style/Theme.Emui.Translucent.NoTitleBar" />
+        </activity>
+
+        <activity
+            android:name="com.huawei.updatesdk.support.pm.PackageInstallerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:theme="@style/upsdkDlDialog" >
+            <meta-data
+                android:name="hwc-theme"
+                android:value="androidhwext:style/Theme.Emui.Translucent" />
+        </activity>
+
+        <!-- 解决华为移动服务升级问题的透明界面 -->
+        <activity
+            android:name="com.huawei.android.hms.agent.common.HMSAgentActivity"
+            android:configChanges="orientation|locale|screenSize|layoutDirection|fontScale"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.Translucent" >
+            <meta-data
+                android:name="hwc-theme"
+                android:value="androidhwext:style/Theme.Emui.Translucent" />
+        </activity>
+
+        <!-- HMS-SDK 下载服务 -->
         <service android:name="com.huawei.updatesdk.service.deamon.download.DownloadService"
                  android:exported="false"/>
-
-        <!-- 接收通道发来的通知栏消息 -->
-        <receiver android:name="com.huawei.hms.support.api.push.PushEventReceiver">
-            <intent-filter>
-                <action android:name="com.huawei.intent.action.PUSH"/>
-            </intent-filter>
-        </receiver>
 
         <!-- 自定义 receiver -->
         <receiver android:name="com.avos.avoscloud.AVHMSPushMessageReceiver">
             <intent-filter>
-
-                <!-- 必须,用于接收TOKEN -->
-                <action android:name="com.huawei.android.push.intent.REGISTRATION"/>
-                <!-- 必须，用于接收消息 -->
-                <action android:name="com.huawei.android.push.intent.RECEIVE"/>
-                <!-- 可选，用于点击通知栏或通知栏上的按钮后触发onEvent回调 -->
-                <action android:name="com.huawei.android.push.intent.CLICK"/>
-                <!-- 可选，查看PUSH通道是否连接，不查看则不需要 -->
-                <action android:name="com.huawei.intent.action.PUSH_STATE"/>
+                <!-- 必须,用于接收token -->
+                <action android:name="com.huawei.android.push.intent.REGISTRATION" />
+                <!-- 必须, 用于接收透传消息 -->
+                <action android:name="com.huawei.android.push.intent.RECEIVE" />
+                <!-- 必须, 用于接收通知栏消息点击事件 此事件不需要开发者处理，只需注册就可以 -->
+                <action android:name="com.huawei.intent.action.PUSH_DELAY_NOTIFY"/>
             </intent-filter>
         </receiver>
 
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -103,18 +143,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:scheme="lcpushscheme" android:host="cn.leancloud.push" android:path="/notify_detail"/>
             </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.huawei.android.hms.agent.common.HMSAgentActivity"
-            android:configChanges="orientation|locale|screenSize|layoutDirection|fontScale"
-            android:excludeFromRecents="true"
-            android:exported="false"
-            android:hardwareAccelerated="true"
-            android:theme="@android:style/Theme.Translucent" >
-            <meta-data
-                android:name="hwc-theme"
-                android:value="androidhwext:style/Theme.Emui.Translucent" />
         </activity>
 
         <activity
