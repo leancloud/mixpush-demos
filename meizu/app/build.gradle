@@ -27,18 +27,21 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
     // LeanCloud 基础包
-    compile ('cn.leancloud.android:avoscloud-sdk:v4.7.1')
-    // 推送与实时聊天需要的包
-    compile ('cn.leancloud.android:avoscloud-push:v4.7.1')
-    compile ('cn.leancloud.android:avoscloud-mixpush:v4.7.1@aar'){
-        exclude group:'cn.leancloud.android', module:'hmsagent'
+    implementation ('cn.leancloud:storage-android:5.0.26'){
+        exclude group: 'com.alibaba', module: 'fastjson'
+        exclude group: 'org.ligboy.retrofit2', module: 'converter-fastjson'
     }
-    compile ('com.meizu.flyme.internet:push-internal:3.6.+@aar')
-//
-//    compile 'com.squareup.okhttp3:okhttp:3.8.1'
-//    compile 'com.alibaba:fastjson:1.2.37'
-
-    compile 'com.alibaba:fastjson:1.1.68.android'
+    //混合推送需要的包
+    implementation('cn.leancloud:mixpush-android:5.0.26@aar') {
+        exclude group: 'com.alibaba', module: 'fastjson'
+        exclude group: 'org.ligboy.retrofit2', module: 'converter-fastjson'
+        exclude group:'cn.leancloud', module:'huawei-hmsagent'
+    }
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'com.alibaba:fastjson:1.1.70.android'
+    implementation "org.ligboy.retrofit2:converter-fastjson-android:2.1.0"
+    //魅族推送需要的包
+    implementation 'com.meizu.flyme.internet:push-internal:3.6.+@aar'
 
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'

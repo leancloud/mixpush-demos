@@ -2,7 +2,10 @@ package cn.leancloud.demo.xiaomi_push;
 
 import android.app.Application;
 
-import com.avos.avoscloud.*;
+import cn.leancloud.AVLogger;
+import cn.leancloud.AVMixPushManager;
+import cn.leancloud.AVOSCloud;
+
 
 /**
  * Created by fengjunwen on 2018/1/22.
@@ -20,7 +23,8 @@ public class MyApp extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
-    AVOSCloud.setDebugLogEnabled(true);
+
+    AVOSCloud.setLogLevel(AVLogger.Level.DEBUG);
     AVOSCloud.initialize(this,LC_APP_ID,LC_APP_KEY);
     AVMixPushManager.registerXiaomiPush(this, XIAOMI_APP, XIAOMI_KEY);
   }
