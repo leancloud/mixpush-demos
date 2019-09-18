@@ -2,8 +2,9 @@ package cn.leancloud.demo.oppopush;
 
 import android.app.Application;
 
-import com.avos.avoscloud.AVMixPushManager;
-import com.avos.avoscloud.AVOSCloud;
+import cn.leancloud.AVLogger;
+import cn.leancloud.AVMixPushManager;
+import cn.leancloud.AVOSCloud;
 
 public class MyApplication extends Application {
   private String LeanCloud_APPID = "Gvv2k8PugDTmYOCfuK8tiWd8-gzGzoHsz"; // your leancloud app id
@@ -17,7 +18,7 @@ public class MyApplication extends Application {
     super.onCreate();
 
     // 开启调试日志
-    AVOSCloud.setDebugLogEnabled(true);
+    AVOSCloud.setLogLevel(AVLogger.Level.DEBUG);
     // 初始化参数依次为 this, AppId, AppKey
     AVOSCloud.initialize(this, LeanCloud_APPID, LeanCloud_APPKEY);
     AVMixPushManager.registerOppoPush(this, OPPO_APPKEY, OPPO_APPSECRET, new MyPushAdapter());

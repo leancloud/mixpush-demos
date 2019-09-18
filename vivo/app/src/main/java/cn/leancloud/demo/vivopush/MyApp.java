@@ -2,10 +2,11 @@ package cn.leancloud.demo.vivopush;
 
 import android.app.Application;
 
-import com.avos.avoscloud.AVCallback;
-import com.avos.avoscloud.AVException;
-import com.avos.avoscloud.AVMixPushManager;
-import com.avos.avoscloud.AVOSCloud;
+import cn.leancloud.AVLogger;
+import cn.leancloud.callback.AVCallback;
+import cn.leancloud.AVException;
+import cn.leancloud.AVMixPushManager;
+import cn.leancloud.AVOSCloud;
 
 public class MyApp extends Application {
   // 请替换成您自己的 appId 和 appKey
@@ -15,7 +16,7 @@ public class MyApp extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
-    AVOSCloud.setDebugLogEnabled(true);
+    AVOSCloud.setLogLevel(AVLogger.Level.DEBUG);
     AVOSCloud.initialize(this,LC_APP_ID,LC_APP_KEY);
     AVMixPushManager.registerVIVOPush(this);
     AVMixPushManager.turnOnVIVOPush(new AVCallback<Boolean>() {

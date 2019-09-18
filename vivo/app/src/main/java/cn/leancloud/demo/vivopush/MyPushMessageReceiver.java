@@ -2,7 +2,7 @@ package cn.leancloud.demo.vivopush;
 
 import android.content.Context;
 
-import com.avos.avoscloud.AVVIVOPushMessageReceiver;
+import cn.leancloud.AVVIVOPushMessageReceiver;
 import com.vivo.push.model.UPSNotificationMessage;
 
 import java.util.logging.Level;
