@@ -2,9 +2,10 @@ package cn.leancloud.demo.leancloudmixpush;
 
 import android.app.Application;
 
-import com.avos.avoscloud.AVOSCloud;
-import com.avos.avoscloud.AVMixPushManager;
-import com.avos.avoscloud.PushService;
+import cn.leancloud.AVLogger;
+import cn.leancloud.AVMixPushManager;
+import cn.leancloud.AVOSCloud;
+import cn.leancloud.push.PushService;
 
 /**
  * Created by fengjunwen on 2018/1/30.
@@ -17,7 +18,9 @@ public class MyApp extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
-    AVOSCloud.setDebugLogEnabled(true);
+
+    //开启调试日志
+    AVOSCloud.setLogLevel(AVLogger.Level.DEBUG);
 
     AVOSCloud.initialize(this, LC_APP_ID, LC_APP_KEY);
     AVMixPushManager.registerHMSPush(this);

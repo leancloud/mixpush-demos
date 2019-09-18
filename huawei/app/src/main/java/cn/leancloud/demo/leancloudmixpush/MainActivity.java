@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import com.avos.avoscloud.AVMixPushManager;
+
+import cn.leancloud.AVMixPushManager;
+
 
 public class MainActivity extends AppCompatActivity {
   @Override

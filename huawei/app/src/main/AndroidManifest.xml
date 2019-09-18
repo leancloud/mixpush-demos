@@ -112,7 +112,7 @@
                  android:exported="false"/>
 
         <!-- 自定义 receiver -->
-        <receiver android:name="com.avos.avoscloud.AVHMSPushMessageReceiver">
+        <receiver android:name="cn.leancloud.AVHMSPushMessageReceiver">
             <intent-filter>
                 <!-- 必须,用于接收token -->
                 <action android:name="com.huawei.android.push.intent.REGISTRATION" />
