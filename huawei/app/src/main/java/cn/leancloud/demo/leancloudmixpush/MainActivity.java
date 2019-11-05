@@ -2,11 +2,10 @@ package cn.leancloud.demo.leancloudmixpush;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import cn.leancloud.AVMixPushManager;
-
 
 public class MainActivity extends AppCompatActivity {
   @Override

@@ -24,6 +24,8 @@
     <!-- HMS-SDK 接收PUSH TOKEN的广播以及PUSH消息需要定义该权限 ${PACKAGE_NAME} 要替换上您应用的包名 -->
     <uses-permission android:name="cn.leancloud.demo.leancloudmixpush.permission.PROCESS_PUSH_MSG" />
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
     <uses-permission android:name="android.permission.READ_PROFILE"/>

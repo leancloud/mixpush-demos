@@ -12,8 +12,8 @@ import cn.leancloud.push.PushService;
  */
 
 public class MyApp extends Application {
-  private static final String LC_APP_ID = "ohqhxu3mgoj2eyj6ed02yliytmbes3mwhha8ylnc215h0bgk";
-  private static final String LC_APP_KEY = "6j8fuggqkbc5m86b8mp4pf2no170i5m7vmax5iypmi72wldc";
+  private static final String LC_APP_ID = "Gvv2k8PugDTmYOCfuK8tiWd8-gzGzoHsz";
+  private static final String LC_APP_KEY = "dpwAo94n81jPsHVxaWwdxJVu";
 
   @Override
   public void onCreate() {
@@ -22,7 +22,7 @@ public class MyApp extends Application {
     //开启调试日志
     AVOSCloud.setLogLevel(AVLogger.Level.DEBUG);
 
-    AVOSCloud.initialize(this, LC_APP_ID, LC_APP_KEY);
+    AVOSCloud.initialize(this, LC_APP_ID, LC_APP_KEY, "https://gvv2k8pu.lc-cn-n1-shared.com");
     AVMixPushManager.registerHMSPush(this);
     PushService.setDefaultPushCallback(this, MainActivity.class);
   }
