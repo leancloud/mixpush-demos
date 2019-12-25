@@ -32,20 +32,20 @@
         </activity>
 
         <service
-            android:name="com.avos.avoscloud.AVFirebaseMessagingService">
+            android:name="cn.leancloud.AVFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
 
         <service
-            android:name="com.avos.avoscloud.AVFirebaseInstanceIDService">
+            android:name="cn.leancloud.AVFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
         </service>
 
-        <service android:name="com.avos.avoscloud.PushService"/>
+        <service android:name="cn.leancloud.push.PushService"/>
     </application>
 
 </manifest>
