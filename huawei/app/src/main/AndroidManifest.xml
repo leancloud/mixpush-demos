@@ -43,7 +43,7 @@
         <!-- 华为推送要求的设置（appId） -->
         <meta-data
             android:name="com.huawei.hms.client.appid"
-            android:value="100259225">
+            android:value="100771663">
         </meta-data>
         <!-- 配置华为移动服务版本 -->
         <meta-data
