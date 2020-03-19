@@ -23,8 +23,9 @@ public class MyApp extends Application {
     AVOSCloud.setLogLevel(AVLogger.Level.DEBUG);
 
     AVOSCloud.initialize(this, LC_APP_ID, LC_APP_KEY, "https://gvv2k8pu.lc-cn-n1-shared.com");
-    AVMixPushManager.registerHMSPush(this);
+    AVMixPushManager.registerHMSPush(this, MyMessageReceiver.class);
     PushService.setDefaultPushCallback(this, MainActivity.class);
+    PushService.setNotificationIcon(R.drawable.c_buoycircle_icon);
   }
 
 }

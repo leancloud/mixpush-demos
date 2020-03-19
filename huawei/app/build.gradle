@@ -36,6 +36,7 @@ dependencies {
         exclude group: 'com.alibaba', module: 'fastjson'
         exclude group: 'org.ligboy.retrofit2', module: 'converter-fastjson'
     }
+
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'com.alibaba:fastjson:1.1.71.android'
     implementation "org.ligboy.retrofit2:converter-fastjson-android:2.1.0"
