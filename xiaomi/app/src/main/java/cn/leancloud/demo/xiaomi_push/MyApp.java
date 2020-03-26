@@ -15,6 +15,7 @@ public class MyApp extends Application {
   // 请替换成您自己的 appId 和 appKey
   private static final String LC_APP_ID = "";
   private static final String LC_APP_KEY = "";
+  private static final String LC_SERVER = "";
 
   // 请替换成您自己的小米 appId 和 appKey
   private static final String XIAOMI_APP = "";
@@ -25,7 +26,7 @@ public class MyApp extends Application {
     super.onCreate();
 
     AVOSCloud.setLogLevel(AVLogger.Level.DEBUG);
-    AVOSCloud.initialize(this,LC_APP_ID,LC_APP_KEY);
+    AVOSCloud.initialize(this,LC_APP_ID,LC_APP_KEY, LC_SERVER);
     AVMixPushManager.registerXiaomiPush(this, XIAOMI_APP, XIAOMI_KEY);
   }
 }
