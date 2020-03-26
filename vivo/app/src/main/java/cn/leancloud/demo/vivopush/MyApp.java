@@ -12,12 +12,13 @@ public class MyApp extends Application {
   // 请替换成您自己的 appId 和 appKey
   private static final String LC_APP_ID = "Gvv2k8PugDTmYOCfuK8tiWd8-gzGzoHsz";
   private static final String LC_APP_KEY = "dpwAo94n81jPsHVxaWwdxJVu";
+  private static final String LC_SERVER_URL = "";
 
   @Override
   public void onCreate() {
     super.onCreate();
     AVOSCloud.setLogLevel(AVLogger.Level.DEBUG);
-    AVOSCloud.initialize(this,LC_APP_ID,LC_APP_KEY);
+    AVOSCloud.initialize(this,LC_APP_ID,LC_APP_KEY, LC_SERVER_URL);
     AVMixPushManager.registerVIVOPush(this);
     AVMixPushManager.turnOnVIVOPush(new AVCallback<Boolean>() {
       @Override
