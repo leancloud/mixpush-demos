@@ -1,7 +1,7 @@
 package cn.leancloud.demo.oppopush;
 
 import cn.leancloud.AVOPPOPushAdapter;
-import com.coloros.mcssdk.mode.SubscribeResult;
+import com.heytap.mcssdk.mode.SubscribeResult;
 
 import java.util.List;
 
