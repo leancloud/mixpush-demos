@@ -1,0 +1,12 @@
+{
+	"client":{
+		"cp_id":"890086000102298554",
+		"product_id":"9105385871708588051",
+		"client_id":"325201496561943680",
+		"client_secret":"8EB278BBB86C674E18707ADC4DC5BBA337DD8EF6063D5306D08ADAFC7456230E",
+		"app_id":"101919973",
+		"package_name":"cn.leancloud.demo.hmspush",
+		"api_key":"CV6hU86OprDF25kYHyoIF1XtPi0IEGJa3uY3OwYNjMYyb13UV14y8D1vR3HaLD9DJmRrkI/8NyoiK608FSFcbFspovoR"
+	},
+	"configuration_version":"1.0"
+}

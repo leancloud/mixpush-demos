@@ -5,39 +5,24 @@ buildscript {
     repositories {
         google()
         jcenter()
-//        //这里是 LeanCloud 的包仓库
-//        maven {
-//            url "http://mvn.leancloud.cn/nexus/content/repositories/public"
-//        }
+        maven {url 'http://developer.huawei.com/repo/'}
+        mavenLocal()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.0'
-        
+        classpath 'com.huawei.agconnect:agcp:1.2.1.301'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
-//resConfigs {
-//    android {
-//        defaultConfig {
-//            resConfigs "en", "zh-rCN"
-//        }
-//    }
-//}
-
 allprojects {
     repositories {
         google()
         jcenter()
-//        maven {
-//            url 'http://developer.huawei.com/repo/'
-//        }
-//        //这里是 LeanCloud 的包仓库
-//        maven {
-//            url "http://mvn.leancloud.cn/nexus/content/repositories/public"
-//        }
+        maven {url 'http://developer.huawei.com/repo/'}
+        mavenLocal()
     }
 }
 

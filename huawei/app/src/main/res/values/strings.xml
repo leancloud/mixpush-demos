@@ -87,7 +87,7 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
-    <string name="app">欢迎来到一本正经生活 app！</string>
-    <string name="ai">原创优质内容分发应用，每天给用户推送一篇原创、有趣文章，根据用户的阅读情况，通过 AI 学习算法提高准确率，非常依赖华为云提供的优质服务，为千万用户提供有趣有价值的内容。 一本正经的做事，一本正经的生活。</string>
+    <string name="app">LeanCloud 混合推送 Demo</string>
+    <string name="ai">当前设备 Id：</string>
     <string name="button">Button</string>
 </resources>
