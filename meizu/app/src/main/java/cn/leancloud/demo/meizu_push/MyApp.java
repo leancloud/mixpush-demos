@@ -10,8 +10,8 @@ import cn.leancloud.AVOSCloud;
  */
 
 public class MyApp extends Application {
-  private static final String LC_APP_ID = "";
-  private static final String LC_APP_KEY = "";
+  private static final String LC_APP_ID = "Gvv2k8PugDTmYOCfuK8tiWd8-gzGzoHsz";
+  private static final String LC_APP_KEY = "dpwAo94n81jPsHVxaWwdxJVu";
 
   private static final String MEIZU_APP = "";
   private static final String MEIZU_KEY = "";
@@ -20,7 +20,7 @@ public class MyApp extends Application {
   public void onCreate() {
     super.onCreate();
     AVOSCloud.setLogLevel(AVLogger.Level.DEBUG);
-    AVOSCloud.initialize(this,LC_APP_ID,LC_APP_KEY);
+    AVOSCloud.initialize(this,LC_APP_ID,LC_APP_KEY, "https://gvv2k8pu.lc-cn-n1-shared.com");
 
     boolean registResult = AVMixPushManager.registerFlymePush(this, MEIZU_APP, MEIZU_KEY);
     System.out.println("register result;" + registResult);

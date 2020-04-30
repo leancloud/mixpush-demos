@@ -20,7 +20,7 @@ public class MyApplication extends Application {
     // 开启调试日志
     AVOSCloud.setLogLevel(AVLogger.Level.DEBUG);
     // 初始化参数依次为 this, AppId, AppKey
-    AVOSCloud.initialize(this, LeanCloud_APPID, LeanCloud_APPKEY);
+    AVOSCloud.initialize(this, LeanCloud_APPID, LeanCloud_APPKEY, "https://gvv2k8pu.lc-cn-n1-shared.com");
     AVMixPushManager.registerOppoPush(this, OPPO_APPKEY, OPPO_APPSECRET, new MyPushAdapter());
   }
 }
