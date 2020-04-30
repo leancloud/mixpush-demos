@@ -13,13 +13,13 @@ import cn.leancloud.AVOSCloud;
 
 public class MyApp extends Application {
   // 请替换成您自己的 appId 和 appKey
-  private static final String LC_APP_ID = "";
-  private static final String LC_APP_KEY = "";
-  private static final String LC_SERVER = "";
+  private static final String LC_APP_ID = "Gvv2k8PugDTmYOCfuK8tiWd8-gzGzoHsz";
+  private static final String LC_APP_KEY = "dpwAo94n81jPsHVxaWwdxJVu";
+  private static final String LC_SERVER = "https://gvv2k8pu.lc-cn-n1-shared.com";
 
   // 请替换成您自己的小米 appId 和 appKey
-  private static final String XIAOMI_APP = "";
-  private static final String XIAOMI_KEY = "";
+  private static final String XIAOMI_APP = "yourAppId";
+  private static final String XIAOMI_KEY = "yourAppKey";
 
   @Override
   public void onCreate() {
