@@ -17,6 +17,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -28,7 +32,7 @@ dependencies {
 //    implementation 'com.huawei.hms:push:4.0.2.300'
 
     //混合推送需要的包
-    implementation('cn.leancloud:mixpush-oppo:6.5.10')
+    implementation('cn.leancloud:mixpush-oppo:6.5.10-opf')
     //即时通信与推送需要的包
     implementation ('cn.leancloud:realtime-android:6.5.10')
     implementation ('cn.leancloud:storage-android:6.5.10')
@@ -44,9 +48,7 @@ dependencies {
 
     implementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
 
-    //implementation 'org.conscrypt:conscrypt-android:2.2.1'
-
-    implementation 'com.android.support:multidex:1.0.1'
+    implementation 'org.conscrypt:conscrypt-android:2.2.1'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0'

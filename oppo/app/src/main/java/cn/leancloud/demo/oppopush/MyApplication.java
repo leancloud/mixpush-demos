@@ -1,9 +1,7 @@
 package cn.leancloud.demo.oppopush;
 
 import android.app.Application;
-import android.content.Context;
 
-import androidx.multidex.MultiDex;
 import cn.leancloud.AVLogger;
 import cn.leancloud.oppo.AVMixPushManager;
 import cn.leancloud.AVOSCloud;
@@ -14,12 +12,6 @@ public class MyApplication extends Application {
 
   private String OPPO_APPKEY = "your oppo app id";
   private String OPPO_APPSECRET = "your oppo app secret";
-
-  @Override
-  protected void attachBaseContext(Context base) {
-    super.attachBaseContext(base);
-    MultiDex.install(this);
-  }
 
   @Override
   public void onCreate() {
