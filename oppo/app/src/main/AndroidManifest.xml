@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="cn.leancloud.demo.oppopush">
+
     <!-- 基础模块（必须加入以下声明）START -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -32,20 +33,25 @@
         </activity>
 
         <service
-            android:name="com.heytap.mcssdk.PushService"
+            android:name="com.heytap.msp.push.service.CompatibleDataMessageCallbackService"
+
             android:permission="com.coloros.mcs.permission.SEND_MCS_MESSAGE">
             <intent-filter>
                 <action android:name="com.coloros.mcs.action.RECEIVE_MCS_MESSAGE"/>
             </intent-filter>
-        </service>
+        </service> <!--兼容Q以下版本-->
 
         <service
-            android:name="com.heytap.mcssdk.AppPushService"
-            android:permission="com.heytap.mcs.permission.SEND_MCS_MESSAGE">
+            android:name="com.heytap.msp.push.service.DataMessageCallbackService"
+
+            android:permission="com.heytap.mcs.permission.SEND_PUSH_MESSAGE">
+
             <intent-filter>
                 <action android:name="com.heytap.mcs.action.RECEIVE_MCS_MESSAGE"/>
+
+                <action android:name="com.heytap.msp.push.RECEIVE_MCS_MESSAGE"/>
             </intent-filter>
-        </service>
+        </service> <!--兼容Q版本-->
 
     </application>
 

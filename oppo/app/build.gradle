@@ -20,25 +20,34 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation files("libs/vivo_pushsdk-v2.9.0.0.aar")
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    implementation files("libs/vivo_pushsdk-v2.9.0.0.aar")
+    implementation files("libs/com.heytap.msp-push-2.1.0.aar")
 
-    implementation 'com.meizu.flyme.internet:push-internal:3.6.2@aar'
-    implementation 'com.huawei.hms:push:4.0.2.300'
+//    implementation 'com.meizu.flyme.internet:push-internal:3.6.2@aar'
+//    implementation 'com.huawei.hms:push:4.0.2.300'
 
     //混合推送需要的包
-    implementation('cn.leancloud:mixpush-android:6.5.6')
+    implementation('cn.leancloud:mixpush-oppo:6.5.10')
     //即时通信与推送需要的包
-    implementation ('cn.leancloud:realtime-android:6.5.6')
-    implementation ('cn.leancloud:storage-android:6.5.6')
+    implementation ('cn.leancloud:realtime-android:6.5.10')
+    implementation ('cn.leancloud:storage-android:6.5.10')
+    implementation ('cn.leancloud:storage-core:6.5.10')
 
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.vectordrawable:vectordrawable:1.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
+
+    //implementation 'org.conscrypt:conscrypt-android:2.2.1'
+
+    implementation 'com.android.support:multidex:1.0.1'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
