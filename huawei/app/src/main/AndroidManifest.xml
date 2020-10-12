@@ -2,6 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="cn.leancloud.demo.hmspush">
 
+
+    <!-- 基础模块（必须加入以下声明）START -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- 基础模块 END -->
+
     <!-- HMS-SDK引导升级HMS功能，访问OTA服务器需要网络权限 -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <!-- HMS-SDK引导升级HMS功能，保存下载的升级包需要SD卡写权限 -->
@@ -63,7 +72,14 @@
                 <data android:scheme="lcpushscheme" android:host="cn.leancloud.push" android:path="/notify_detail"/>
             </intent-filter>
         </activity>
-
+        <service android:name="cn.leancloud.push.PushService"/>
+        <receiver android:name="cn.leancloud.push.AVBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
         <service
             android:name="cn.leancloud.AVHMSMessageService"
             android:exported="false">

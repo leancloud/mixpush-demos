@@ -16,10 +16,24 @@ android {
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
     }
+    android {
+        signingConfigs {
+            config {
+                keyPassword '123456'
+                keyAlias 'testalias'
+                storeFile file('test.keystore')
+                storePassword '123456'
+            }
+        }
+    }
     buildTypes {
+        debug {
+            signingConfig signingConfigs.config
+        }
         release {
+            signingConfig signingConfigs.config
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }
