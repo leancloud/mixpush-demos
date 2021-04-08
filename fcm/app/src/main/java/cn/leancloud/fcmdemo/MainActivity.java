@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 
+import cn.leancloud.push.PushService;
+
 public class MainActivity extends AppCompatActivity {
   private Handler myHandler = new Handler(new Handler.Callback() {
     @Override
