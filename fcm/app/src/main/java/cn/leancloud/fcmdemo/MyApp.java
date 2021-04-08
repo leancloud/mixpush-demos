@@ -25,7 +25,13 @@ public class MyApp extends Application {
     createNotificationChannel();
 
   }
-
+  /*发推送时要设置推送的 channel_id 与下面设置的 NotificationChannel ID 相同。
+  {
+    "alert": "my alert",
+          "title": "my title",
+          "channel_id":"CHANNEL_ID_01"
+  }
+  */
   private void createNotificationChannel() {
     // Create the NotificationChannel, but only on API 26+ because
     // the NotificationChannel class is new and not in the support library
