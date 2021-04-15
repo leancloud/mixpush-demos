@@ -1,12 +1,15 @@
 apply plugin: 'com.android.application'
 
+// Add the following line:
+apply plugin: 'com.google.gms.google-services'  // Google Services plugin
+
 android {
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
 
     defaultConfig {
         applicationId "cn.leancloud.fcmdemo"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -14,6 +17,12 @@ android {
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
     buildTypes {
         release {
             minifyEnabled true
@@ -23,16 +32,16 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
-    implementation('cn.leancloud:leancloud-fcm:6.1.5@aar') {
-        exclude group: 'com.alibaba', module: 'fastjson'
-        exclude group: 'org.ligboy.retrofit2', module: 'converter-fastjson'
-    }
+//    implementation('cn.leancloud:leancloud-fcm:7.2.5@aar') {
+//        exclude group: 'com.alibaba', module: 'fastjson'
+//        exclude group: 'org.ligboy.retrofit2', module: 'converter-fastjson'
+//    }
     //即时通信与推送需要的包
-    implementation ('cn.leancloud:realtime-android:6.1.5'){
+    implementation ('cn.leancloud:realtime-android:7.2.4'){
         exclude group: 'com.alibaba', module: 'fastjson'
         exclude group: 'org.ligboy.retrofit2', module: 'converter-fastjson'
     }
@@ -40,10 +49,17 @@ dependencies {
     implementation 'com.alibaba:fastjson:1.1.70.android'
     implementation "org.ligboy.retrofit2:converter-fastjson-android:2.1.0"
 
-    implementation 'com.google.firebase:firebase-core:15.0.2'
-    implementation 'com.google.firebase:firebase-iid:15.0.2'
-    implementation 'com.google.firebase:firebase-messaging:15.0.2'
-    implementation 'com.firebase:firebase-jobdispatcher:0.8.5'
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:27.0.0')
+    // Declare the dependencies for the Firebase Cloud Messaging and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-analytics'
+
+//    implementation 'com.google.firebase:firebase-core:15.0.2'
+//    implementation 'com.google.firebase:firebase-iid:15.0.2'
+//    implementation 'com.google.firebase:firebase-messaging:15.0.2'
+//    implementation 'com.firebase:firebase-jobdispatcher:0.8.5'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0'

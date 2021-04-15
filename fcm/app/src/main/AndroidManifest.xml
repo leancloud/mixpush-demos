@@ -38,13 +38,6 @@
             </intent-filter>
         </service>
 
-        <service
-            android:name="cn.leancloud.AVFirebaseInstanceIDService">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
-            </intent-filter>
-        </service>
-
         <service android:name="cn.leancloud.push.PushService"/>
     </application>
 

@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity {
   private Handler myHandler = new Handler(new Handler.Callback() {
@@ -28,9 +30,25 @@ public class MainActivity extends AppCompatActivity {
       @Override
       public void onClick(View v) {
         // Get token
-        String token = FirebaseInstanceId.getInstance().getToken();
-        String msg = getString(R.string.msg_token_fmt, token);
-        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+        FirebaseMessaging.getInstance().getToken()
+            .addOnCompleteListener(new OnCompleteListener<String>() {
+              @Override
+              public void onComplete(Task<String> task) {
+                if (!task.isSuccessful()) {
+                  Toast.makeText(MainActivity.this,
+                      "Fetching FCM registration token failed: " + task.getException(),
+                      Toast.LENGTH_SHORT).show();
+                  return;
+                }
+
+                // Get new FCM registration token
+                String token = task.getResult();
+
+                // Log and toast
+                String msg = getString(R.string.msg_token_fmt, token);
+                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+              }
+            });
       }
     });
   }
