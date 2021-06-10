@@ -1,9 +1,9 @@
 package cn.leancloud.demo.meizu_push;
 
 import android.app.Application;
-import cn.leancloud.AVLogger;
-import cn.leancloud.AVMixPushManager;
-import cn.leancloud.AVOSCloud;
+import cn.leancloud.LCLogger;
+import cn.leancloud.LCMixPushManager;
+import cn.leancloud.LeanCloud;
 
 /**
  * Created by fengjunwen on 2018/1/22.
@@ -19,10 +19,10 @@ public class MyApp extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
-    AVOSCloud.setLogLevel(AVLogger.Level.DEBUG);
-    AVOSCloud.initialize(this,LC_APP_ID,LC_APP_KEY, "https://gvv2k8pu.lc-cn-n1-shared.com");
+    LeanCloud.setLogLevel(LCLogger.Level.DEBUG);
+    LeanCloud.initialize(this,LC_APP_ID,LC_APP_KEY, "https://gvv2k8pu.lc-cn-n1-shared.com");
 
-    boolean registResult = AVMixPushManager.registerFlymePush(this, MEIZU_APP, MEIZU_KEY);
+    boolean registResult = LCMixPushManager.registerFlymePush(this, MEIZU_APP, MEIZU_KEY);
     System.out.println("register result;" + registResult);
   }
 }
