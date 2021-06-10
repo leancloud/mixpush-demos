@@ -2,11 +2,11 @@ package cn.leancloud.demo.vivopush;
 
 import android.app.Application;
 
-import cn.leancloud.AVLogger;
-import cn.leancloud.callback.AVCallback;
-import cn.leancloud.AVException;
-import cn.leancloud.AVMixPushManager;
-import cn.leancloud.AVOSCloud;
+import cn.leancloud.LCLogger;
+import cn.leancloud.callback.LCCallback;
+import cn.leancloud.LCException;
+import cn.leancloud.LCMixPushManager;
+import cn.leancloud.LeanCloud;
 
 public class MyApp extends Application {
   // 请替换成您自己的 appId 和 appKey
@@ -17,12 +17,12 @@ public class MyApp extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
-    AVOSCloud.setLogLevel(AVLogger.Level.DEBUG);
-    AVOSCloud.initialize(this,LC_APP_ID,LC_APP_KEY, LC_SERVER_URL);
-    AVMixPushManager.registerVIVOPush(this);
-    AVMixPushManager.turnOnVIVOPush(new AVCallback<Boolean>() {
+    LeanCloud.setLogLevel(LCLogger.Level.DEBUG);
+    LeanCloud.initialize(this,LC_APP_ID,LC_APP_KEY, LC_SERVER_URL);
+    LCMixPushManager.registerVIVOPush(this);
+    LCMixPushManager.turnOnVIVOPush(new LCCallback<Boolean>() {
       @Override
-      protected void internalDone0(Boolean aBoolean, AVException e) {
+      protected void internalDone0(Boolean aBoolean, LCException e) {
         if (null != e) {
           System.out.println("failed to turn on VIVO push. cause:");
           e.printStackTrace();
