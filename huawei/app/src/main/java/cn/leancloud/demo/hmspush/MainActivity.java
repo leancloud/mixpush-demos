@@ -6,10 +6,10 @@ import android.os.Bundle;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
-import cn.leancloud.AVException;
-import cn.leancloud.AVInstallation;
-import cn.leancloud.AVMixPushManager;
-import cn.leancloud.callback.AVCallback;
+import cn.leancloud.LCException;
+import cn.leancloud.LCInstallation;
+import cn.leancloud.LCMixPushManager;
+import cn.leancloud.callback.LCCallback;
 
 public class MainActivity extends AppCompatActivity {
   @Override
@@ -17,12 +17,12 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    AVMixPushManager.connectHMS(MainActivity.this);
-    AVMixPushManager.turnOnHMSPush(MainActivity.this, new AVCallback<Void>() {
+    LCMixPushManager.connectHMS(MainActivity.this);
+    LCMixPushManager.turnOnHMSPush(MainActivity.this, new LCCallback<Void>() {
       @Override
-      protected void internalDone0(Void aVoid, AVException avException) {
-        if (null != avException) {
-          System.out.println("failed to turn on HMS Push, cause: " + avException.getMessage());
+      protected void internalDone0(Void aVoid, LCException LCException) {
+        if (null != LCException) {
+          System.out.println("failed to turn on HMS Push, cause: " + LCException.getMessage());
         } else {
           System.out.println("succeed to turn on HMS Push.");
         }
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     System.out.println("intentUri: " + intentUri);
 
     EditText contentText = findViewById(R.id.editText);
-    contentText.setText("Current Device Id:\r\n" + AVInstallation.getCurrentInstallation().getInstallationId());
+    contentText.setText("Current Device Id:\r\n" + LCInstallation.getCurrentInstallation().getInstallationId());
   }
 
 
