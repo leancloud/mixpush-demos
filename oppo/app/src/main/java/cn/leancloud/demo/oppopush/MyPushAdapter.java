@@ -1,8 +1,8 @@
 package cn.leancloud.demo.oppopush;
 
-import cn.leancloud.AVOPPOPushAdapter;
+import cn.leancloud.LCOPPOPushAdapter;
 
-public class MyPushAdapter extends AVOPPOPushAdapter {
+public class MyPushAdapter extends LCOPPOPushAdapter {
   @Override
   public void onGetPushStatus(int var1, int var2) {
   }
