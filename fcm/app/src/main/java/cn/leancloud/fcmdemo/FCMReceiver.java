@@ -26,7 +26,7 @@ public class FCMReceiver extends FirebaseMessagingService {
         String alert = remoteMessage.getNotification().getBody();
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "CHANNEL_ID_01")
-                .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
+//                .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
                 .setContentTitle(title)
                 .setContentText(alert)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);

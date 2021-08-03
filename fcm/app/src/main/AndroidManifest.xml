@@ -31,12 +31,6 @@
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_launcher_background" />
 
-        <!--        <service android:name="cn.leancloud.AVFirebaseMessagingService">-->
-        <!--            <intent-filter>-->
-        <!--                <action android:name="com.google.firebase.MESSAGING_EVENT" />-->
-        <!--            </intent-filter>-->
-        <!--        </service>-->
-
         <!--  自定义 Receiver -->
         <service
             android:name=".FCMReceiver"
@@ -45,7 +39,8 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name="cn.leancloud.LCFirebaseInstanceIDService">
+        <service android:name="cn.leancloud.LCFirebaseMessagingService"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
