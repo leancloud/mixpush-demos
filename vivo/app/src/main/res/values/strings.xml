@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">VivoPushDemo</string>
+    <string name="log_ui_client">[本地]</string>
+    <string name="log_ui_server">[服务]</string>
+
+    <string name="log_tip">日志：</string>
+    <string name="clear_log">清除日志</string>
+    <string name="log_seperator">插入分行</string>
+    <string name="log_filter">仅显示异常</string>
+    <string name="text_btn_rich">富媒体消息</string>
 </resources>

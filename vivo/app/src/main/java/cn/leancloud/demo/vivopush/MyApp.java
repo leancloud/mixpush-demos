@@ -5,7 +5,7 @@ import android.app.Application;
 import cn.leancloud.LCLogger;
 import cn.leancloud.callback.LCCallback;
 import cn.leancloud.LCException;
-import cn.leancloud.LCMixPushManager;
+import cn.leancloud.vivo.LCMixPushManager;
 import cn.leancloud.LeanCloud;
 
 public class MyApp extends Application {

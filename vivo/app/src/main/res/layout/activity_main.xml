@@ -1,19 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/root"
     tools:context=".MainActivity">
+    <LinearLayout
+        android:id="@+id/log_frame"
+        android:layout_width="fill_parent"
+        android:layout_height="51dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/text_log_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="20dip"
+            android:layout_marginLeft="10dp"
+            android:text="@string/log_tip"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/btn_clear_log"
+            android:layout_width="wrap_content"
+            android:layout_height="33dip"
+            android:layout_marginRight="5dip"
+            android:gravity="center"
+            android:onClick="clearLog"
+            android:paddingBottom="3dip"
+            android:paddingTop="3dip"
+            android:text="@string/clear_log"
+            android:textSize="15sp"
+            tools:ignore="OnClick" />
+
+        <Button
+            android:id="@+id/btn_log_seperator"
+            android:layout_width="wrap_content"
+            android:layout_height="33dip"
+            android:gravity="center"
+            android:onClick="seperatLog"
+            android:paddingBottom="3dip"
+            android:paddingTop="3dip"
+            android:text="@string/log_seperator"
+            android:textSize="15sp"
+            tools:ignore="OnClick" />
+
+        <CheckBox
+            android:id="@+id/log_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="33dip"
+            android:layout_marginRight="5dip"
+            android:gravity="center"
+            android:paddingBottom="3dip"
+            android:paddingTop="3dip"
+            android:text="@string/log_filter"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/content_scroll_wrapper"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="#707070"
+        tools:ignore="MissingConstraints">
+
+        <cn.leancloud.demo.vivopush.widget.LogView
+            android:id="@+id/log_content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp"
+            android:paddingLeft="3dip"/>
+    </ScrollView>
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        tools:ignore="MissingConstraints">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/bind"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="TurnOn"
+                />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/unbind"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="TurnOff"
+                />
+
+            <Button
+                android:id="@+id/getRegID"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="getRegId"
+                />
+
+            <Button
+                android:id="@+id/intent"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="getintent"
+                />
+
+            <Button
+                android:id="@+id/checkManifest"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="checkManifest"
+                />
+
+            <Button
+                android:id="@+id/bindAlias"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="bindAlias"
+                />
+            <Button
+                android:id="@+id/unBindAlias"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="unBindAlias"
+                />
+
+            <Button
+                android:id="@+id/getAlias"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="getAlias "
+                />
+
+            <Button
+                android:id="@+id/setTopic"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="setTopic "
+                />
+
+            <Button
+                android:id="@+id/delTopic"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="delTopic "
+                />
+
+            <Button
+                android:id="@+id/getTopics"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="getTopics        "
+                />
+
+            <Button
+                android:id="@+id/isSupport"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="isSupport        "
+                />
+
+
+            <Button
+                android:id="@+id/sendNotificationMsg"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="发送推送请求：通知栏消息"
+                />
+
+            <Button
+                android:id="@+id/sendTransmissionMsg"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="发送推送请求：透传消息"
+                />
+
+            <Button
+                android:id="@+id/sendSpecificTargetMsg"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="发送推送请求：特定响应目标"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
