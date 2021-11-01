@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "cn.leancloud.demo.xiaomi_push"
-        minSdkVersion 26
+        minSdkVersion 25
         targetSdkVersion 28
         multiDexEnabled true
         versionCode 1
@@ -17,6 +17,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+
 }
 
 dependencies {
@@ -26,15 +31,10 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
 
     // LeanCloud 基础包
-    implementation('cn.leancloud:mixpush-android:8.0.1')
+    implementation('cn.leancloud:mixpush-android:8.1.5')
     //混合推送需要的包
-    implementation('cn.leancloud:realtime-android:8.0.1')
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
-
-    implementation 'com.meizu.flyme.internet:push-internal:3.6.2@aar'
-    implementation 'com.huawei.hms:push:4.0.2.300'
-
-    implementation files("libs/vivo_pushsdk-v2.9.0.0.aar")
+    implementation('cn.leancloud:realtime-android:8.1.5')
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0'
