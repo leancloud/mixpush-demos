@@ -3,4 +3,15 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="oppo_white">#fafafa</color>
+    <color name="oppo_white_press">#e7e7e7</color>
+    <color name="oppo_line_divider">#DEDEDE</color>
+    <color name="oppo_gray">#C2C5C9</color>
+    <color name="oppo_green">#11CD96</color>
+    <color name="oppo_green_disable">#B7F0DF</color>
+    <color name="oppo_green_press">#0FBF8A</color>
+    <color name="oppo_default_text_col">#333333</color>
+    <color name="red">#E81D1D</color>
+    <color name="yellow">#FFEB3B</color>
 </resources>
