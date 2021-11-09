@@ -19,3 +19,11 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-dontwarn com.vivo.push.**
+
+-keep class com.vivo.push.**{*; }
+
+-keep class com.vivo.vms.**{*; }
+
+-keep class xxx.xxx.xxx.PushMessageReceiverImpl{*;}

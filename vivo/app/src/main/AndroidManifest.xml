@@ -19,7 +19,17 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".CustomActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="cn.leancloud.push"
+                    android:path="/detail"
+                    android:scheme="mixpushscheme" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,9 +37,11 @@
             </intent-filter>
         </activity>
 
+        <!--Vivo Push需要配置的service、activity-->
         <service
             android:name="com.vivo.push.sdk.service.CommandClientService"
-            android:exported="true" />
+            android:permission="com.push.permission.UPSTAGESERVICE"
+            android:exported="true"/>
 
         <activity
             android:name="com.vivo.push.sdk.LinkProxyClientActivity"
@@ -46,10 +58,15 @@
 
         <meta-data
             android:name="com.vivo.push.api_key"
-            android:value="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+            android:value="4806456555d006fc70fde987322987ea" />
         <meta-data
             android:name="com.vivo.push.app_id"
-            android:value="xxxxx" />
+            android:value="105497438" />
+
+        <!--Vivo Push SDK的版本信息-->
+        <meta-data
+            android:name="sdk_version_vivo"
+            android:value="483"/>
     </application>
 
 </manifest>

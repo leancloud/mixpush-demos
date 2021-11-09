@@ -262,11 +262,14 @@ public class MainActivity extends AppCompatActivity {
         LCPush push = new LCPush();
         push.setPushToAndroid(true);
         push.setQuery(query);
-        push.setMessage("this is a test from LeanCloud.");
-        push.setChannel("leancloud");
         Map<String, Object> params = new HashMap<>();
         params.put("occ", System.currentTimeMillis());
-        params.put("other", "test mixpush");
+        params.put("other", "test mixpush for vivo");
+        params.put("title", "leancloud");
+        params.put("content", "this is a test from LeanCloud.");
+        Map<String, Object> vivoMode = new HashMap<>();
+        vivoMode.put("pushMode", 1);
+        params.put("vivo", vivoMode);
         push.setData(params);
         push.sendInBackground().subscribe(new Observer<JSONObject>() {
           @Override
@@ -295,6 +298,7 @@ public class MainActivity extends AppCompatActivity {
     });
 
     Button sendTransmissionPush = findViewById(R.id.sendTransmissionMsg);
+    sendTransmissionPush.setVisibility(View.GONE);
     sendTransmissionPush.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
@@ -303,11 +307,14 @@ public class MainActivity extends AppCompatActivity {
         LCPush push = new LCPush();
         push.setPushToAndroid(true);
         push.setQuery(query);
-        push.setMessage("this is a test from LeanCloud.");
-        push.setChannel("leancloud");
         Map<String, Object> params = new HashMap<>();
         params.put("occ", System.currentTimeMillis());
-        params.put("other", "test mixpush");
+        params.put("other", "test mixpush for vivo");
+        params.put("title", "leancloud");
+        params.put("content", "this is a test from LeanCloud.");
+        Map<String, Object> vivoMode = new HashMap<>();
+        vivoMode.put("pushMode", 1);
+        params.put("vivo", vivoMode);
         push.setData(params);
         push.sendInBackground().subscribe(new Observer<JSONObject>() {
           @Override
@@ -344,11 +351,16 @@ public class MainActivity extends AppCompatActivity {
         LCPush push = new LCPush();
         push.setPushToAndroid(true);
         push.setQuery(query);
-        push.setMessage("this is a test from LeanCloud.");
-        push.setChannel("leancloud");
         Map<String, Object> params = new HashMap<>();
         params.put("occ", System.currentTimeMillis());
         params.put("other", "test mixpush");
+        params.put("title", "leancloud");
+        params.put("content", "this is a test from LeanCloud.");
+        Map<String, Object> vivoMode = new HashMap<>();
+        vivoMode.put("pushMode", 1);
+        vivoMode.put("skipContent", getIntentParma());
+        vivoMode.put("skipType", 4);
+        params.put("vivo", vivoMode);
         push.setData(params);
         push.sendInBackground().subscribe(new Observer<JSONObject>() {
           @Override
@@ -377,11 +389,11 @@ public class MainActivity extends AppCompatActivity {
     });
   }
 
-  private void getIntentParma() {
+  private String getIntentParma() {
     //        在Android 开发工具中，参考如下代码生成 Intent
     android.content.Intent intent = new Intent(this, CustomActivity.class);
     //Scheme协议（vpushscheme://com.vivo.push.notifysdk/detail?）开发者可以自定义
-    intent.setData(Uri.parse("vpushscheme://com.vivo.pushtest/detail?"));
+    intent.setData(Uri.parse("mixpushscheme://cn.leancloud.push/detail?"));
     //intent 中添加自定义键值对，value 为 String 型
     intent.putExtra("key1", "xxx");
     //intent 中添加自定义键值对，value 为 Integer 型
@@ -393,6 +405,7 @@ public class MainActivity extends AppCompatActivity {
     String log = " intentUri= " + intentUri;
     Log.d(TAG, " intentUri= " + intentUri);
     updateDisplay(log);
+    return intentUri;
   }
 
   public void onStateChanged(int i) {
