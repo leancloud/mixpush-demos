@@ -7,6 +7,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ToggleButton;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -105,4 +109,21 @@ public class PushConfigFragment extends Fragment {
     // TODO: Update argument type and name
     void onFragmentInteraction(Uri uri);
   }
+
+  public List<Integer> getPushWeekdays() {
+    List<Integer> weekDays = new ArrayList<>();
+    ViewGroup viewGroup = getView().findViewById(R.id.ll_weekday);
+    for (int i = 0; i < viewGroup.getChildCount(); i++) {
+      View child = viewGroup.getChildAt(i);
+      if (child instanceof ToggleButton && ((ToggleButton) child).isChecked()) {
+        weekDays.add(Integer.parseInt(child.getTag().toString()));
+      }
+    }
+    return weekDays;
+  }
+
+  public List<Integer> getPushTime() {
+    return new ArrayList<>();
+  }
+
 }

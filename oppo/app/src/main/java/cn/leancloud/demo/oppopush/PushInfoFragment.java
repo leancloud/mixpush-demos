@@ -105,4 +105,10 @@ public class PushInfoFragment extends Fragment {
     // TODO: Update argument type and name
     void onFragmentInteraction(Uri uri);
   }
+
+  public void setNumber(int number) {
+//    if (notificationButton != null) {
+//      notificationButton.setNotificationNumber(number);
+//    }
+  }
 }

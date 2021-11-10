@@ -11,12 +11,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="每周可接受消息时间"
+        android:visibility="gone"
         android:textSize="@dimen/default_text_size"/>
 
     <LinearLayout
         android:id="@+id/ll_weekday"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:visibility="gone">
 
         <ToggleButton
             android:id="@+id/btn_monday"
@@ -109,6 +111,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="4dp"
         android:text="每天接受消息时间"
+        android:visibility="gone"
         android:textSize="@dimen/default_text_size"/>
 
     <LinearLayout
@@ -117,6 +120,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:visibility="gone"
         android:background="@drawable/shape_bg_white_with_gray_ring"
         android:orientation="horizontal">
 

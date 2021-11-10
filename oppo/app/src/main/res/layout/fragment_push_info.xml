@@ -12,29 +12,29 @@
             android:id="@+id/linearLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/btn_init"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onButtonClick"
-                android:text="初始化"
-                android:visibility="gone"/>
-            <Button
-                android:id="@+id/btn_app_register"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onButtonClick"
-                android:text="应用注册" />
+<!--            <Button-->
+<!--                android:id="@+id/btn_init"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="onButtonClick"-->
+<!--                android:text="初始化"-->
+<!--                android:visibility="gone"/>-->
+<!--            <Button-->
+<!--                android:id="@+id/btn_app_register"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="onButtonClick"-->
+<!--                android:text="应用注册" />-->
 
-            <Button
-                android:id="@+id/btn_app_unregister"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onButtonClick"
-                android:text="应用注销" />
+<!--            <Button-->
+<!--                android:id="@+id/btn_app_unregister"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="onButtonClick"-->
+<!--                android:text="应用注销" />-->
 
             <Button
                 android:id="@+id/btn_switch_enable"
@@ -51,7 +51,7 @@
                 android:onClick="onButtonClick"
                 android:text="关闭应用通知" />
             <Button
-                android:id="@+id/btn_seitch_get"
+                android:id="@+id/btn_switch_get"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -80,14 +80,14 @@
                 android:onClick="onButtonClick"
                 android:text="获取注册ID" />
 
-            <Button
-                android:id="@+id/btn_check_appid"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onButtonClick"
-                android:text="AppId校验"
-                android:visibility="gone" />
+<!--            <Button-->
+<!--                android:id="@+id/btn_check_appid"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="onButtonClick"-->
+<!--                android:text="AppId校验"-->
+<!--                android:visibility="gone" />-->
 
             <Button
                 android:id="@+id/btn_open_notification_setting"
@@ -128,41 +128,34 @@
                 android:text="版本信息" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayout4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+<!--        <LinearLayout-->
+<!--            android:id="@+id/linearLayout4"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
 
-            <Button
-                android:id="@+id/bt_is_support"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onButtonClick"
-                android:text="是否支持(上报埋点)"/>
+<!--            <Button-->
+<!--                android:id="@+id/bt_is_support"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="onButtonClick"-->
+<!--                android:text="是否支持(上报埋点)"/>-->
 
-            <Button
-                android:id="@+id/bt_clear_notification"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onButtonClick"
-                android:text="清除通知"/>
-            <Button
-                android:id="@+id/bt_static1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onButtonClick"
-                android:text="统计上报1(旧)"/>
-            <Button
-                android:id="@+id/bt_static2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onButtonClick"
-                android:text="统计上报2(旧)"/>
-        </LinearLayout>
+<!--            <Button-->
+<!--                android:id="@+id/bt_static1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="onButtonClick"-->
+<!--                android:text="统计上报1(旧)"/>-->
+<!--            <Button-->
+<!--                android:id="@+id/bt_static2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="onButtonClick"-->
+<!--                android:text="统计上报2(旧)"/>-->
+<!--        </LinearLayout>-->
 
         <LinearLayout
             android:id="@+id/linearLayout5"
@@ -173,32 +166,32 @@
                 android:id="@+id/btn_sta1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:onClick="onButtonClick"
-                android:text="上报1" />
+                android:text="普通消息" />
 
             <Button
                 android:id="@+id/btn_sta2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:onClick="onButtonClick"
-                android:text="上报2" />
+                android:text="应用内页面1" />
 
             <Button
-                android:id="@+id/btn_start_press"
+                android:id="@+id/btn_sta3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:onClick="onButtonClick"
-                android:text="开启压测" />
+                android:text="应用内页面2" />
             <Button
-                android:id="@+id/btn_stop_press"
+                android:id="@+id/btn_sta4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:onClick="onButtonClick"
-                android:text="结束压测" />
+                android:text="打开网页" />
         </LinearLayout>
 
         <LinearLayout
@@ -220,7 +213,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onButtonClick"
-                android:text="不带红点通知栏" />
+                android:text="无红点通知栏" />
+            <Button
+                android:id="@+id/bt_clear_notification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onButtonClick"
+                android:text="清除通知"/>
 
 <!--            <com.heytap.push.demo.MyNotificationButton-->
 <!--                android:id="@+id/clear_red_badge"-->
