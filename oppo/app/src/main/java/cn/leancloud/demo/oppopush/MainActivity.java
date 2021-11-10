@@ -261,6 +261,7 @@ public class MainActivity extends AppCompatActivity
       push.setQuery(pushQuery);
       push.setPushToAndroid(true);
       Map<String, Object> pushParams = new HashMap<>();
+      HashMap<String, Object> oppoParams = new HashMap<>();
 
       switch (view.getId()) {
         // 常用操作 fragment
@@ -324,7 +325,13 @@ public class MainActivity extends AppCompatActivity
           });
           break;
         case R.id.btn_sta2:
-          pushParams.put("key1", "value1");
+          oppoParams.put("key1", "value1");
+          oppoParams.put("content", "Test From LeanCloud");
+          oppoParams.put("click_action_type", 1);
+          oppoParams.put("click_action_activity", "cn.leancloud.push.demo.internal");
+//          oppoParams.put("click_action_type", 4);
+//          oppoParams.put("click_action_activity", "cn.leancloud.demo.oppopush.AboutActivity");
+          pushParams.put("oppo", oppoParams);
           push.setData(pushParams);
           push.sendInBackground().subscribe(new Observer<JSONObject>() {
             @Override
@@ -350,7 +357,10 @@ public class MainActivity extends AppCompatActivity
           });
           break;
         case R.id.btn_sta3:
-          pushParams.put("key1", "value1");
+          oppoParams.put("content", "Test From LeanCloud");
+          oppoParams.put("click_action_type", 5);
+          oppoParams.put("click_action_url", "command://test?key1=value1&key2=value2");
+          pushParams.put("oppo", oppoParams);
           push.setData(pushParams);
           push.sendInBackground().subscribe(new Observer<JSONObject>() {
             @Override
@@ -376,7 +386,11 @@ public class MainActivity extends AppCompatActivity
           });
           break;
         case R.id.btn_sta4:
-          pushParams.put("key1", "value1");
+          oppoParams.put("key1", "value1");
+          oppoParams.put("content", "Test From LeanCloud");
+          oppoParams.put("click_action_type", 2);
+          oppoParams.put("click_action_url", "https://leancloud.cn/docs");
+          pushParams.put("oppo", oppoParams);
           push.setData(pushParams);
           push.sendInBackground().subscribe(new Observer<JSONObject>() {
             @Override
