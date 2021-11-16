@@ -3,7 +3,7 @@ package cn.leancloud.demo.hmspush;
 import android.app.Application;
 
 import cn.leancloud.LCLogger;
-import cn.leancloud.LCMixPushManager;
+import cn.leancloud.hms.LCMixPushManager;
 import cn.leancloud.LeanCloud;
 import cn.leancloud.demo.hmspush.R;
 import cn.leancloud.push.PushService;

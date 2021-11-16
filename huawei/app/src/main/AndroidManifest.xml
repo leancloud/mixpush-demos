@@ -3,13 +3,13 @@
           package="cn.leancloud.demo.hmspush">
 
 
-    <!-- 基础模块（必须加入以下声明）START -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <!-- 基础模块 END -->
+<!--    &lt;!&ndash; 基础模块（必须加入以下声明）START &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
+<!--    <uses-permission android:name="android.permission.INTERNET"/>-->
+<!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>-->
+<!--    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
+<!--    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>-->
+<!--    &lt;!&ndash; 基础模块 END &ndash;&gt;-->
 
     <!-- HMS-SDK引导升级HMS功能，访问OTA服务器需要网络权限 -->
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -25,13 +25,13 @@
     <!-- 如果是安卓8.0，应用编译配置的targetSdkVersion>=26，请务必添加以下权限 -->
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
 
-    <!-- HMS-SDK 接收PUSH TOKEN的广播以及PUSH消息需要定义该权限 ${PACKAGE_NAME} 要替换上您应用的包名 -->
-    <permission
-        android:name="cn.leancloud.demo.hmspush.permission.PROCESS_PUSH_MSG"
-        android:protectionLevel="signatureOrSystem"/>
+<!--    &lt;!&ndash; HMS-SDK 接收PUSH TOKEN的广播以及PUSH消息需要定义该权限 ${PACKAGE_NAME} 要替换上您应用的包名 &ndash;&gt;-->
+<!--    <permission-->
+<!--        android:name="cn.leancloud.demo.hmspush.permission.PROCESS_PUSH_MSG"-->
+<!--        android:protectionLevel="signatureOrSystem"/>-->
 
-    <!-- HMS-SDK 接收PUSH TOKEN的广播以及PUSH消息需要定义该权限 ${PACKAGE_NAME} 要替换上您应用的包名 -->
-    <uses-permission android:name="cn.leancloud.demo.hmspush.permission.PROCESS_PUSH_MSG" />
+<!--    &lt;!&ndash; HMS-SDK 接收PUSH TOKEN的广播以及PUSH消息需要定义该权限 ${PACKAGE_NAME} 要替换上您应用的包名 &ndash;&gt;-->
+<!--    <uses-permission android:name="cn.leancloud.demo.hmspush.permission.PROCESS_PUSH_MSG" />-->
 
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
@@ -72,8 +72,7 @@
                 <data android:scheme="lcpushscheme" android:host="cn.leancloud.push" android:path="/notify_detail"/>
             </intent-filter>
         </activity>
-        <service android:name="cn.leancloud.push.PushService"/>
-        <receiver android:name="cn.leancloud.push.AVBroadcastReceiver">
+        <receiver android:name="cn.leancloud.push.LCBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
                 <action android:name="android.intent.action.USER_PRESENT"/>
@@ -81,7 +80,7 @@
             </intent-filter>
         </receiver>
         <service
-            android:name="cn.leancloud.AVHMSMessageService"
+            android:name="cn.leancloud.LCHMSMessageService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.huawei.push.action.MESSAGING_EVENT" />
