@@ -2,19 +2,22 @@ package cn.leancloud.fcmdemo;
 
 import android.os.Handler;
 import android.os.Message;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import cn.leancloud.LCException;
 import cn.leancloud.LCInstallation;
 import cn.leancloud.callback.SaveCallback;
 import cn.leancloud.convertor.ObserverBuilder;
-import cn.leancloud.push.PushService;
 import cn.leancloud.utils.StringUtil;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,13 +38,17 @@ public class MainActivity extends AppCompatActivity {
     displayBtn.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        // Get token
-        String token = FirebaseInstanceId.getInstance().getToken();
-        String msg = getString(R.string.msg_token_fmt, token);
-        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
-        if (!StringUtil.isEmpty(token)) {
-          sendRegistrationToServer(token);
-        }
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
+          @Override
+          public void onComplete(@NonNull Task<String> task) {
+            String token = task.getResult();
+            String msg = getString(R.string.msg_token_fmt, token);
+            Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+            if (!StringUtil.isEmpty(token)) {
+              sendRegistrationToServer(token);
+            }
+          }
+        });
       }
     });
   }

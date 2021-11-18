@@ -9,12 +9,18 @@ android {
     defaultConfig {
         applicationId "cn.leancloud.fcmdemo"
         minSdkVersion 26
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    android {
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
     }
     buildTypes {
         release {
@@ -34,12 +40,12 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation "com.android.support:support-compat:28.0.0"
 
-    implementation 'cn.leancloud:leancloud-fcm:8.0.4'
+    implementation 'cn.leancloud:leancloud-fcm:8.1.5'
     //即时通信与推送需要的包
     implementation 'cn.leancloud:realtime-android:8.0.4'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 
-    implementation platform('com.google.firebase:firebase-bom:27.0.0')
+    implementation platform('com.google.firebase:firebase-bom:28.4.2')
     // Declare the dependencies for the Firebase Cloud Messaging and Analytics libraries
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-messaging'

@@ -10,12 +10,13 @@ import androidx.core.app.NotificationCompat;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import cn.leancloud.LCFirebaseMessagingService;
+
 //自定义 Receiver
-public class FCMReceiver extends FirebaseMessagingService {
+public class FCMReceiver extends LCFirebaseMessagingService {
   @Override
   public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
-    super.onMessageReceived(remoteMessage);
-
+//    super.onMessageReceived(remoteMessage);
     // Check if message contains a data payload.
     if (remoteMessage.getData().size() > 0) {
       Log.d("TAG", "Message data payload: " + remoteMessage.getData());
