@@ -3,4 +3,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+
+    <color name="log_ui_level_warn">#ffa5e02e</color>
+    <color name="log_ui_level_error">#fff52670</color>
+    <color name="log_ui_date">#ffffe792</color>
 </resources>

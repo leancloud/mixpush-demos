@@ -1,14 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context=".PushInfoFragment">
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+<!--            <Button-->
+<!--                android:id="@+id/btn_init"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="onButtonClick"-->
+<!--                android:text="初始化"-->
+<!--                android:visibility="gone"/>-->
+<!--            <Button-->
+<!--                android:id="@+id/btn_app_register"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="onButtonClick"-->
+<!--                android:text="应用注册" />-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btn_app_unregister"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="onButtonClick"-->
+<!--                android:text="应用注销" />-->
+
+            <Button
+                android:id="@+id/btn_switch_enable"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onButtonClick"
+                android:text="打开应用通知" />
+            <Button
+                android:id="@+id/btn_switch_disable"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onButtonClick"
+                android:text="关闭应用通知" />
+            <Button
+                android:id="@+id/btn_switch_get"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onButtonClick"
+                android:text="获取应用通知" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_check_opush_support"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onButtonClick"
+                android:text="检查Opush" />
+
+            <Button
+                android:id="@+id/btn_get_regid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onButtonClick"
+                android:text="获取注册ID" />
+
+<!--            <Button-->
+<!--                android:id="@+id/btn_check_appid"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="onButtonClick"-->
+<!--                android:text="AppId校验"-->
+<!--                android:visibility="gone" />-->
+
+            <Button
+                android:id="@+id/btn_open_notification_setting"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onButtonClick"
+                android:text="通知栏设置" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_get_push_service_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onButtonClick"
+                android:text="推送服务状态" />
+
+            <Button
+                android:id="@+id/btn_get_statusbar_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onButtonClick"
+                android:text="通知栏状态" />
+
+            <Button
+                android:id="@+id/btn_get_version_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onButtonClick"
+                android:text="版本信息" />
+        </LinearLayout>
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/linearLayout4"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <Button-->
+<!--                android:id="@+id/bt_is_support"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="onButtonClick"-->
+<!--                android:text="是否支持(上报埋点)"/>-->
+
+<!--            <Button-->
+<!--                android:id="@+id/bt_static1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="onButtonClick"-->
+<!--                android:text="统计上报1(旧)"/>-->
+<!--            <Button-->
+<!--                android:id="@+id/bt_static2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="onButtonClick"-->
+<!--                android:text="统计上报2(旧)"/>-->
+<!--        </LinearLayout>-->
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_sta1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:onClick="onButtonClick"
+                android:text="普通消息" />
+
+            <Button
+                android:id="@+id/btn_sta2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:onClick="onButtonClick"
+                android:text="应用内页面1" />
+
+            <Button
+                android:id="@+id/btn_sta3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:onClick="onButtonClick"
+                android:text="应用内页面2" />
+            <Button
+                android:id="@+id/btn_sta4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:onClick="onButtonClick"
+                android:text="打开网页" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/red_badge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onButtonClick"
+                android:text="红点通知栏" />
+
+            <Button
+                android:id="@+id/no_red_badge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onButtonClick"
+                android:text="无红点通知栏" />
+            <Button
+                android:id="@+id/bt_clear_notification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onButtonClick"
+                android:text="清除通知"/>
+
+<!--            <com.heytap.push.demo.MyNotificationButton-->
+<!--                android:id="@+id/clear_red_badge"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="onButtonClick"-->
+<!--                android:text="清除红点" />-->
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

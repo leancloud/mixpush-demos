@@ -2,7 +2,7 @@ package cn.leancloud.demo.meizu_push;
 
 import android.app.Application;
 import cn.leancloud.LCLogger;
-import cn.leancloud.LCMixPushManager;
+import cn.leancloud.flyme.LCMixPushManager;
 import cn.leancloud.LeanCloud;
 
 /**

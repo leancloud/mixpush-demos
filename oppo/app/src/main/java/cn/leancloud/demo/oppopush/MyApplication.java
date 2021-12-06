@@ -7,11 +7,11 @@ import cn.leancloud.oppo.LCMixPushManager;
 import cn.leancloud.LeanCloud;
 
 public class MyApplication extends Application {
-  private String LeanCloud_APPID = "Gvv2k8PugDTmYOCfuK8tiWd8-gzGzoHsz"; // your leancloud app id
-  private String LeanCloud_APPKEY = "dpwAo94n81jPsHVxaWwdxJVu"; // your leancloud app key.
+  private static final String LeanCloud_APPID = "Gvv2k8PugDTmYOCfuK8tiWd8-gzGzoHsz"; // your leancloud app id
+  private static final String LeanCloud_APPKEY = "dpwAo94n81jPsHVxaWwdxJVu"; // your leancloud app key.
 
-  private String OPPO_APPKEY = "your oppo app id";
-  private String OPPO_APPSECRET = "your oppo app secret";
+  public static final String OPPO_APPKEY = "a0c08b3c9ea54f0c826b231f8ea37d80";
+  public static final String OPPO_APPSECRET = "2681de6a59e94a5b9d66e820bd87612c";//""your oppo app secret";
 
   @Override
   public void onCreate() {

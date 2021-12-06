@@ -3,7 +3,7 @@ package cn.leancloud.demo.xiaomi_push;
 import android.app.Application;
 
 import cn.leancloud.LCLogger;
-import cn.leancloud.LCMixPushManager;
+import cn.leancloud.mi.LCMixPushManager;
 import cn.leancloud.LeanCloud;
 import cn.leancloud.push.PushService;
 

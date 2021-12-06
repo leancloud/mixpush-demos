@@ -8,7 +8,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import cn.leancloud.LCException;
 import cn.leancloud.LCInstallation;
-import cn.leancloud.LCMixPushManager;
+import cn.leancloud.hms.LCMixPushManager;
 import cn.leancloud.callback.LCCallback;
 
 public class MainActivity extends AppCompatActivity {
