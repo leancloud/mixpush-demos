@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
         applicationId "cn.leancloud.demo.oppopush"
         minSdkVersion 26
-        targetSdkVersion 28
+        targetSdkVersion 29
         multiDexEnabled true
         versionCode 1
         versionName "1.0"
@@ -24,8 +24,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation files("libs/oppo-push-3.0.0.aar")
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
 
     //混合推送需要的包
     implementation('cn.leancloud:mixpush-oppo:8.2.0')
