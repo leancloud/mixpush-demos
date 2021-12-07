@@ -5,8 +5,6 @@ import android.app.Application;
 import cn.leancloud.LCLogger;
 import cn.leancloud.mi.LCMixPushManager;
 import cn.leancloud.LeanCloud;
-import cn.leancloud.push.PushService;
-
 
 /**
  * Created by fengjunwen on 2018/1/22.
@@ -28,7 +26,6 @@ public class MyApp extends Application {
 
     LeanCloud.initialize(this,LC_APP_ID,LC_APP_KEY, LC_SERVER);
     LeanCloud.setLogLevel(LCLogger.Level.DEBUG);
-    PushService.setDefaultPushCallback(this, MainActivity.class);
     LCMixPushManager.registerXiaomiPush(this, XIAOMI_APP, XIAOMI_KEY,"xsui");
   }
 }
