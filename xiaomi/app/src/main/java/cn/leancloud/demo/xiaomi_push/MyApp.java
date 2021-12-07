@@ -6,7 +6,6 @@ import cn.leancloud.LCLogger;
 import cn.leancloud.mi.LCMixPushManager;
 import cn.leancloud.LeanCloud;
 
-
 /**
  * Created by fengjunwen on 2018/1/22.
  */
@@ -18,15 +17,15 @@ public class MyApp extends Application {
   private static final String LC_SERVER = "https://gvv2k8pu.lc-cn-n1-shared.com";
 
   // 请替换成您自己的小米 appId 和 appKey
-  private static final String XIAOMI_APP = "yourAppId";
-  private static final String XIAOMI_KEY = "yourAppKey";
+  private static final String XIAOMI_APP = "2882303761520089892";
+  private static final String XIAOMI_KEY = "5692008967892";
 
   @Override
   public void onCreate() {
     super.onCreate();
 
-    LeanCloud.setLogLevel(LCLogger.Level.DEBUG);
     LeanCloud.initialize(this,LC_APP_ID,LC_APP_KEY, LC_SERVER);
-    LCMixPushManager.registerXiaomiPush(this, XIAOMI_APP, XIAOMI_KEY);
+    LeanCloud.setLogLevel(LCLogger.Level.DEBUG);
+    LCMixPushManager.registerXiaomiPush(this, XIAOMI_APP, XIAOMI_KEY,"xsui");
   }
 }
