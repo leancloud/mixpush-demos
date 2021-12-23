@@ -10,8 +10,8 @@ public class MyApplication extends Application {
   private static final String LeanCloud_APPID = "Gvv2k8PugDTmYOCfuK8tiWd8-gzGzoHsz"; // your leancloud app id
   private static final String LeanCloud_APPKEY = "dpwAo94n81jPsHVxaWwdxJVu"; // your leancloud app key.
 
-  public static final String OPPO_APPKEY = "a0c08b3c9ea54f0c826b231f8ea37d80";
-  public static final String OPPO_APPSECRET = "2681de6a59e94a5b9d66e820bd87612c";//""your oppo app secret";
+  public static final String OPPO_APPKEY = "87b1d6c3a426496aab9931d94ee890c2";
+  public static final String OPPO_APPSECRET = "8a443674d9ae45b49cfacfb288b50105";//""your oppo app secret";
 
   @Override
   public void onCreate() {
