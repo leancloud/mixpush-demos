@@ -32,8 +32,8 @@ dependencies {
 
 
     //混合推送需要的包
-    implementation('cn.leancloud:mixpush-xiaomi:8.2.0')
-    implementation('cn.leancloud:realtime-android:8.2.0')
+    implementation('cn.leancloud:mixpush-xiaomi:8.2.4')
+    implementation('cn.leancloud:realtime-android:8.2.4')
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
 
 
