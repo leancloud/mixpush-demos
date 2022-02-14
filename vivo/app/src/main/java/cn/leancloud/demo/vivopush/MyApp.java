@@ -2,11 +2,13 @@ package cn.leancloud.demo.vivopush;
 
 import android.app.Application;
 
+import cn.leancloud.LCInstallation;
 import cn.leancloud.LCLogger;
 import cn.leancloud.callback.LCCallback;
 import cn.leancloud.LCException;
 import cn.leancloud.vivo.LCMixPushManager;
 import cn.leancloud.LeanCloud;
+
 
 public class MyApp extends Application {
   // 请替换成您自己的 appId 和 appKey
@@ -19,6 +21,8 @@ public class MyApp extends Application {
     super.onCreate();
     LeanCloud.setLogLevel(LCLogger.Level.DEBUG);
     LeanCloud.initialize(this,LC_APP_ID,LC_APP_KEY, LC_SERVER_URL);
+
+    //使用默认 profile
     LCMixPushManager.registerVIVOPush(this);
     LCMixPushManager.turnOnVIVOPush(new LCCallback<Boolean>() {
       @Override
@@ -31,5 +35,8 @@ public class MyApp extends Application {
         }
       }
     });
+
+    String installationId = LCInstallation.getCurrentInstallation().getInstallationId();
+    System.out.println("installationId：" + installationId );
   }
 }
