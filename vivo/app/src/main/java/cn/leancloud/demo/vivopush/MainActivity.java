@@ -42,9 +42,6 @@ public class MainActivity extends AppCompatActivity {
   private static final String TAG = "LeanCloud-VVPush";
   private LogView mLogView;
   private ScrollView mScrollView;
-  private static final String APPID = "10000";
-  private static final String API_KEY = "9c29fe5f-ea67-46d3-951f-81da78d2c029";
-  private static final String APP_SECRET = "7265f2a4-ebbb-44bf-88b9-b03e67dfdc5b";
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

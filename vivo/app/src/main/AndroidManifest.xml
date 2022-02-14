@@ -9,6 +9,9 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <uses-permission android:name="com.coloros.mcs.permission.RECIEVE_MCS_MESSAGE" />
+    <uses-permission android:name="com.heytap.mcs.permission.RECIEVE_MCS_MESSAGE" />
+
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -66,7 +69,7 @@
         <!--Vivo Push SDK的版本信息-->
         <meta-data
             android:name="sdk_version_vivo"
-            android:value="483"/>
+            android:value="484"/>
     </application>
 
 </manifest>
