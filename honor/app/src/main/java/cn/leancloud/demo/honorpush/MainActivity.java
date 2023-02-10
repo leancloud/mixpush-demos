@@ -18,6 +18,8 @@ import cn.leancloud.demo.honorpush.databinding.ActivityMainBinding;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import cn.leancloud.honor.LCMixPushManager;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
@@ -43,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        if (LCMixPushManager.isSupportHonorPush()) {
+            System.out.println("Current device DOES support honor push.");
+        } else {
+            System.out.println("!!!!!!!!! Current device DOES NOT support honor push. !!!!!!!!!");
+        }
     }
 
     @Override

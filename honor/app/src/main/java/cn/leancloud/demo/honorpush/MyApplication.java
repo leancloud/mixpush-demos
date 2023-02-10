@@ -16,6 +16,5 @@ public class MyApplication extends Application {
 
         LeanCloud.initialize(this, LC_APP_ID, LC_APP_KEY, "https://gvv2k8pu.lc-cn-n1-shared.com");
         LCMixPushManager.registerHonorPush(this);
-        PushService.setDefaultPushCallback(this, MainActivity.class);
     }
 }
