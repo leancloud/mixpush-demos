@@ -14,11 +14,11 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     textView= (TextView) findViewById(R.id.textView1);
-    textView.setText("installationId: " + "installationId");
+    textView.setText("installationId: ");
 
     String installationId = LCInstallation.getCurrentInstallation().getInstallationId();
     if (installationId != null){
-      System.out.println("installationId:installationId");
+      System.out.println("installationId" + installationId);
       textView.setText("installationId: "+installationId);
     }else{
       textView.setText("installationId = null");
